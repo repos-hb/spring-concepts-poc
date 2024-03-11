@@ -18,8 +18,10 @@ public class OrderServiceApplication {
 		// prototypeinsingleton
 		Singleton singleton1 = context.getBean("singleton", Singleton.class);
 		Singleton singleton2 = context.getBean("singleton", Singleton.class);
-		System.out.println(singleton1.getPrototype().hashCode());
-		System.out.println(singleton2.getPrototype().hashCode());
+		System.out.println(singleton1.getInstance().hashCode());
+		System.out.println(singleton1.getInstance().hashCode());
+		System.out.println("-------");
+		System.out.println(singleton2.getInstance().hashCode());
 		// Obs: prototype bean behaves like singleton. same object returned once injected during initialization of singleton class
 
 

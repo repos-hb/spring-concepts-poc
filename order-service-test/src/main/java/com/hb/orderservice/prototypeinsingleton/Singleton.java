@@ -7,14 +7,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class Singleton {
 
-    @Autowired
-    private Prototype prototype;
+//    @Autowired
+//    private Prototype prototype;
 
-    public Prototype getPrototype() {
-        return prototype;
-    }
+//    public Prototype getPrototype() {
+//        return prototype;
+//    }
+//
+//    public void setPrototype(Prototype prototype) {
+//        this.prototype = getInstance();
+//    }
 
-    public void setPrototype(Prototype prototype) {
-        this.prototype = prototype;
+    /**
+     * Spring overrides the method with a call to beanFactory.getBean(Prototype.class)
+     */
+    @Lookup
+    public Prototype getInstance(){
+        return null;
     }
 }
