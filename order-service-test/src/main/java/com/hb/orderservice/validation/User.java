@@ -1,5 +1,6 @@
 package com.hb.orderservice.validation;
 
+import com.hb.orderservice.validation.customvalidation.ValidateProductType;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.*;
@@ -35,4 +36,8 @@ public class User {
     @AssertTrue
     @AssertFalse
     private boolean isActive;
+
+    @ValidateProductType
+    @NotBlank
+    private String productType;
 }

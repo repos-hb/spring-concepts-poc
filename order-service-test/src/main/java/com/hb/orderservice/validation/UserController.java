@@ -12,5 +12,6 @@ public class UserController {
     @PostMapping("/user/save")
     public void saveUser(@RequestBody @Valid User user){
         // do nothing
+        System.out.println();
     }
 }
