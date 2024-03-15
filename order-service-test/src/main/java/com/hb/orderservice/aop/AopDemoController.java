@@ -18,4 +18,17 @@ public class AopDemoController {
         log.info("AOP: inside AopDemoController.two()");
         throw new RuntimeException("aop test");
     }
+
+    @LogExecutionTime
+    @GetMapping("/aop/3")
+    public void three() throws InterruptedException {
+        log.info("AOP: inside AopDemoController.three()");
+        Thread.sleep(1000);
+    }
+
+    @LogPayloads
+    @GetMapping("/aop/4")
+    public void four() throws InterruptedException {
+        log.info("AOP: inside AopDemoController.four()");
+    }
 }
